@@ -1,0 +1,56 @@
+﻿<Window x:Class="DataEnterStoreAndSearch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataEnterStoreAndSearch"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="320" MinWidth="800" Height="250" Initialized="OnInitialized">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MaxWidth="256"/>
+            <ColumnDefinition MaxWidth="32"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="64"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <local:LabelledTextBox Grid.Row="0" LabelContent="Enter Search Field"/>
+            <Button Grid.Row="1" x:Name="SearchButton" Content="Search" Click="OnSearchButton_Click"/>
+            <GridSplitter Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32"/>
+                    <RowDefinition Height="64"/>
+                    <RowDefinition MaxHeight="32"/>
+                    <RowDefinition Height="32"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Enter New Employee" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <local:LabelledTextBox Grid.Column="0" x:Name="NameLabelledTextBox" LabelContent="Name"/>
+                    <local:LabelledTextBox Grid.Column="1" x:Name="IDNumberLabelledTextBox" LabelContent="ID Number" PreviewTextInput="OnIDNumberLabelledTextBox_PreviewTextInput" PreviewKeyDown="OnIDNumberLabelledTextBox_PreviewKeyDown"/>
+                    <local:LabelledTextBox Grid.Column="2" x:Name="DepartmentLabelledTextBox" LabelContent="Department"/>
+                </Grid>
+
+                <Label Grid.Row="2" x:Name="InputErrorMessageLabel" Content="temporary error message testing a long error" HorizontalContentAlignment="Center" TextOptions.TextFormattingMode="Display" Foreground="#FFE22323"/>
+                <Button Grid.Row="3" Content="Submit" MaxHeight="32" Click="OnSubmitButton_Click" />
+            </Grid>
+        </Grid>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+
+        <DataGrid Grid.Column="2" x:Name="EmployeeDataGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        </DataGrid>
+    </Grid>
+</Window>

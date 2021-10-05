@@ -1,0 +1,17 @@
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\bin\Debug\DataEnterStoreAndSearch.exe.config
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\bin\Debug\DataEnterStoreAndSearch.exe
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\bin\Debug\DataEnterStoreAndSearch.pdb
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\MainWindow.g.cs
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\App.g.cs
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch_MarkupCompile.cache
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch_MarkupCompile.lref
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\MainWindow.baml
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch.g.resources
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch.Properties.Resources.resources
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch.csproj.GenerateResource.cache
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch.csproj.CoreCompileInputs.cache
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch.exe
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch.pdb
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\LabelledTextBox.g.cs
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\LabelledTextBox.baml

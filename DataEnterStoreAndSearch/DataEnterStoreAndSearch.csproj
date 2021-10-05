@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="StoreManager\IStoreManager.cs" />
+    <Compile Include="StoreManager\StoreManagerJSON.cs" />
     <Page Include="LabelledTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -67,6 +69,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controller\ControllerJSON.cs" />
+    <Compile Include="Controller\IController.cs" />
     <Compile Include="DataClass.cs" />
     <Compile Include="LabelledTextBox.xaml.cs">
       <DependentUpon>LabelledTextBox.xaml</DependentUpon>

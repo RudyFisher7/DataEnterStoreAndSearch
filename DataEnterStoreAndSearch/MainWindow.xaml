@@ -50,7 +50,14 @@
         </Grid>
         <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
 
-        <DataGrid Grid.Column="2" x:Name="EmployeeDataGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        </DataGrid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="16"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" x:Name="StorePathTextBox" Text="C:\Users\Public\Documents\Store.json" />
+            <DataGrid Grid.Row="1" x:Name="EmployeeDataGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            </DataGrid>
+        </Grid>
     </Grid>
 </Window>

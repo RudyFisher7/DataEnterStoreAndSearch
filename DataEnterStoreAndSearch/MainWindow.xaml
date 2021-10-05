@@ -52,11 +52,22 @@
 
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="16"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="24"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" x:Name="StorePathTextBox" Text="C:\Users\Public\Documents\Store.json" />
-            <DataGrid Grid.Row="1" x:Name="EmployeeDataGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Label Grid.Row="0" Content="Store Path" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Center" FontSize="14"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="128"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="64"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="ValidateStorePathButton" Content="Validate Path" Click="OnValidateStorePathButton_Click"/>
+                <TextBox Grid.Column="1" x:Name="StorePathTextBox" Text="C:\Users\Public\Documents\Store.json" VerticalContentAlignment="Center"/>
+                <Label Grid.Column="2" x:Name="StorePathValidityLabel" Content="Valid" HorizontalContentAlignment="Center"/>
+            </Grid>
+            <DataGrid Grid.Row="2" x:Name="EmployeeDataGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             </DataGrid>
         </Grid>
     </Grid>

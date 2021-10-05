@@ -40,6 +40,12 @@ namespace DataEnterStoreAndSearch
             EmployeeDataGrid.ItemsSource = employees;
         }
 
+        private bool IsStorePathValid()
+        {
+            //TODO: really validate for real
+            return true;
+        }
+
         private void OnInitialized(object sender, EventArgs e)
         {
             //TODO: search for the next increment of idnumber and set to IDNumberLabelledTextBox.MyTextBox.Text
@@ -77,6 +83,12 @@ namespace DataEnterStoreAndSearch
             // Else, check if there is a department that matches. If so, get all results based on department
 
             // Cache results into the DataGrid
+        }
+
+        private void OnValidateStorePathButton_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO: clear datagrid
+            //TODO: validate store path
         }
     }
 }

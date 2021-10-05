@@ -38,5 +38,15 @@ namespace DataEnterStoreAndSearch.StoreManager
         /// <param name="department">The department to search for</param>
         /// <param name="results">The results matching the needle</param>
         void SearchStoreForDepartment(string path, string department, ArrayList results);
+
+        /// <summary>
+        /// Adds the given information to the store.
+        /// </summary>
+        /// <param name="name">The name to add</param>
+        /// <param name="idNumber">The idNumber to add</param>
+        /// <param name="department">the department to add</param>
+        /// <param name="path">the store's path</param>
+        /// <returns>True if successfully added, otherwise false</returns>
+        bool AddToStore(string name, int idNumber, string department, string path);
     }
 }

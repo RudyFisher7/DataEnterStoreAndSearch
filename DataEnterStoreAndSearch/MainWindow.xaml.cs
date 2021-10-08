@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataEnterStoreAndSearch.Controller;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,27 +24,30 @@ namespace DataEnterStoreAndSearch
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ArrayList employees = null; //TODO: put this in store manager class and rename to searchResults
+        #region Error Messages
+        private const string ID_NUMBER_ALREADY_EXISTS = "Failed. ID number already exists.";
+        #endregion
+
         private Regex integerRegularExpression = new Regex("[^0-9]+");
+        private IController controller;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            employees = new ArrayList();
-
-            for (int i = 0; i < 4; i++)
-            {
-                employees.Add(new DataClass("Juicy Fruit", 800 + i, "Veggetables"));
-            }
-
-            EmployeeDataGrid.ItemsSource = employees;
+            EmployeeDataGrid.ItemsSource = null;
+            controller = new ControllerJSON();
         }
 
         private bool IsStorePathValid()
         {
             //TODO: really validate for real
             return true;
+        }
+
+        private void DisplayError(string error)
+        {
+            InputErrorMessageLabel.Content = error;
         }
 
         private void OnInitialized(object sender, EventArgs e)
@@ -66,23 +70,25 @@ namespace DataEnterStoreAndSearch
             string name = NameLabelledTextBox.MyTextBox.Text;
             int idNumber = 0;
             string department = DepartmentLabelledTextBox.MyTextBox.Text;
+            bool didSuccessfullyWriteToStore = false;
 
-            int.TryParse(IDNumberLabelledTextBox.MyTextBox.Text, out idNumber);
+            int.TryParse(IDNumberLabelledTextBox.MyTextBox.Text, out idNumber); //TODO: Do this in validator class
 
-            //TODO: add data to store
+            didSuccessfullyWriteToStore = controller.WriteToStore(StorePathTextBox.Text, name, idNumber, department);
+
+            if (!didSuccessfullyWriteToStore)
+            {
+                DisplayError(ID_NUMBER_ALREADY_EXISTS);
+            }
         }
 
         private void OnSearchButton_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: search store based on entered text
-
-            // Check if text is a number. If so, search by idnumber
-
-            // Else, check if any employee's name in the store matches. If so, get the all occurances
-
-            // Else, check if there is a department that matches. If so, get all results based on department
+            ArrayList dataToDisplay = new ArrayList(32);
+            controller.SearchStore(StorePathTextBox.Text, SearchFieldLabelledTextBox.MyTextBox.Text, dataToDisplay);
 
             // Cache results into the DataGrid
+            EmployeeDataGrid.ItemsSource = dataToDisplay;
         }
 
         private void OnValidateStorePathButton_Click(object sender, RoutedEventArgs e)

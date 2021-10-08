@@ -16,3 +16,5 @@ C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\
 C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\LabelledTextBox.baml
 C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch.csprojAssemblyReference.cache
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\bin\Debug\Newtonsoft.Json.dll
+C:\Users\rfish\source\repos\DataEnterStoreAndSearch\DataEnterStoreAndSearch\obj\Debug\DataEnterStoreAndSearch.csproj.CopyComplete

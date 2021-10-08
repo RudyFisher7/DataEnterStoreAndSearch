@@ -21,5 +21,14 @@ namespace DataEnterStoreAndSearch.Controller
         /// <param name="needle">The needle to search for</param>
         /// <param name="results">The results matching the needle</param>
         void SearchStore(string path, string needle, ArrayList results);
+
+        /// <summary>
+        /// Writes to the store.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="name"></param>
+        /// <param name="idNumber"></param>
+        /// <param name="department"></param>
+        bool WriteToStore(string path, string name, int idNumber, string department);
     }
 }

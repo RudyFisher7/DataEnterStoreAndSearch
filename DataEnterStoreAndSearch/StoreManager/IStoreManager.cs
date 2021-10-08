@@ -42,11 +42,11 @@ namespace DataEnterStoreAndSearch.StoreManager
         /// <summary>
         /// Adds the given information to the store.
         /// </summary>
+        /// <param name="path">the store's path</param>
         /// <param name="name">The name to add</param>
         /// <param name="idNumber">The idNumber to add</param>
         /// <param name="department">the department to add</param>
-        /// <param name="path">the store's path</param>
         /// <returns>True if successfully added, otherwise false</returns>
-        bool AddToStore(string name, int idNumber, string department, string path);
+        bool WriteToStore(string path, string name, int idNumber, string department);
     }
 }

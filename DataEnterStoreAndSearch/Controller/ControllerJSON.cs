@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataEnterStoreAndSearch.StoreManager;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,13 @@ namespace DataEnterStoreAndSearch.Controller
     /// </summary>
     public class ControllerJSON : IController
     {
+        private IStoreManager storeManager;
+
+        public ControllerJSON()
+        {
+            storeManager = new StoreManagerJSON();
+        }
+
         /// <summary>
         /// Searches the store at the given path for the given needle, and puts
         /// the results in the given ArrayList
@@ -22,7 +30,25 @@ namespace DataEnterStoreAndSearch.Controller
         /// <see cref="IController.SearchStore(string, string, ArrayList)"/>
         public void SearchStore(string path, string needle, ArrayList results)
         {
-            throw new NotImplementedException();
+            int idNumber = 0;
+            if (int.TryParse(needle, out idNumber))
+            {
+                storeManager.SearchStoreForIDNumber(path, idNumber, results);
+            }
+            else
+            {
+                storeManager.SearchStoreForName(path, needle, results);
+
+                if (results.Count == 0)
+                {
+                    storeManager.SearchStoreForDepartment(path, needle, results);
+                }
+            }
+        }
+
+        public bool WriteToStore(string path, string name, int idNumber, string department)
+        {
+            return storeManager.WriteToStore(path, name, idNumber, department);
         }
     }
 }

@@ -22,7 +22,7 @@
                 <RowDefinition Height="16"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <local:LabelledTextBox Grid.Row="0" LabelContent="Enter Search Field"/>
+            <local:LabelledTextBox x:Name="SearchFieldLabelledTextBox" Grid.Row="0" LabelContent="Enter Search Field"/>
             <Button Grid.Row="1" x:Name="SearchButton" Content="Search" Click="OnSearchButton_Click"/>
             <GridSplitter Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
             <Grid Grid.Row="3">

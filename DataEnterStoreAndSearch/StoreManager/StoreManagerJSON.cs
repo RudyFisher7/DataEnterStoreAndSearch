@@ -17,12 +17,12 @@ namespace DataEnterStoreAndSearch.StoreManager
         /// <summary>
         /// Adds the given information to the store.
         /// </summary>
+        /// <param name="path">the store's path</param>
         /// <param name="name">The name to add</param>
         /// <param name="idNumber">The idNumber to add</param>
         /// <param name="department">the department to add</param>
-        /// <param name="path">the store's path</param>
         /// <returns>True if successfully added, otherwise false</returns>
-        public bool AddToStore(string name, int idNumber, string department, string path)
+        public bool WriteToStore(string path, string name, int idNumber, string department)
         {
             bool result = true;
             DataClass dataToAdd = new DataClass(name, idNumber, department);
@@ -61,10 +61,18 @@ namespace DataEnterStoreAndSearch.StoreManager
         /// <param name="results">The results matching the needle</param>
         public void SearchStoreForDepartment(string path, string department, ArrayList results)
         {
-            using (StreamReader reader = new StreamReader(path))
+            Dictionary<int, DataClass> storeData = ReadDataFromStore(path);
+
+            using (Dictionary<int, DataClass>.ValueCollection.Enumerator valueEnumerator = storeData.Values.GetEnumerator())
             {
-                string json = reader.ReadToEnd();
-                Dictionary<int, DataClass> storeData = JsonConvert.DeserializeObject<Dictionary<int, DataClass>>(json);
+                while (valueEnumerator.MoveNext())
+                {
+                    DataClass currentData = valueEnumerator.Current;
+                    if (currentData.Department == department)
+                    {
+                        results.Add(currentData);
+                    }
+                }
             }
         }
 
@@ -77,19 +85,37 @@ namespace DataEnterStoreAndSearch.StoreManager
         /// <param name="results">The results matching the needle</param>
         public void SearchStoreForIDNumber(string path, int idNumber, ArrayList results)
         {
-            throw new NotImplementedException();
+            Dictionary<int, DataClass> storeData = ReadDataFromStore(path);
+
+            if (storeData.ContainsKey(idNumber))
+            {
+                results.Add(storeData[idNumber]);
+            }
         }
 
         /// <summary>
         /// Searches the store at the given path for the given name, and puts
-        /// the results in the given ArrayList
+        /// the results in the given ArrayList. O(N) time complexity if results
+        /// doesn't have to grow.
         /// </summary>
         /// <param name="path">The path to the store to search</param>
         /// <param name="name">The name to search for</param>
         /// <param name="results">The results matching the needle</param>
         public void SearchStoreForName(string path, string name, ArrayList results)
         {
-            throw new NotImplementedException();
+            Dictionary<int, DataClass> storeData = ReadDataFromStore(path);
+
+            using (Dictionary<int, DataClass>.ValueCollection.Enumerator valueEnumerator = storeData.Values.GetEnumerator())
+            {
+                while (valueEnumerator.MoveNext())
+                {
+                    DataClass currentData = valueEnumerator.Current;
+                    if (currentData.Name == name)
+                    {
+                        results.Add(currentData);
+                    }
+                }
+            }
         }
 
         /// <summary>

@@ -58,6 +58,7 @@
     </ApplicationDefinition>
     <Compile Include="StoreManager\IStoreManager.cs" />
     <Compile Include="StoreManager\StoreManagerJSON.cs" />
+    <Compile Include="Validator\IValidator.cs" />
     <Page Include="LabelledTextBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
